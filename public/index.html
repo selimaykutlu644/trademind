@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TradeMind</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f1419">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Trade<span>Mind</span></div>
+    <form id="f">
+      <input id="sym" value="THYAO" placeholder="THYAO, AAPL, BTC-USD" autocomplete="off" spellcheck="false">
+      <button type="submit">Analiz Et</button>
+    </form>
+  </header>
+
+  <section class="card scanbar">
+    <b>Top 50 Tarayıcı</b>
+    <select id="uni">
+      <option value="turkey">BIST hisseleri</option>
+      <option value="crypto">Kripto (Binance USDT)</option>
+      <option value="america">ABD hisseleri (&gt;2 Mr$)</option>
+      <option value="all">Hepsi</option>
+    </select>
+    <select id="tf">
+      <option value="1D">Günlük</option>
+      <option value="1W">Haftalık</option>
+      <option value="1M">Aylık</option>
+      <option value="4H">4 Saat</option>
+      <option value="1H">1 Saat</option>
+    </select>
+    <select id="order">
+      <option value="desc">En yüksek 50</option>
+      <option value="asc">En düşük 50</option>
+    </select>
+    <select id="liq">
+      <option value="0">Likidite: Kapalı</option>
+      <option value="1" selected>Likidite: Orta</option>
+      <option value="2">Likidite: Yüksek</option>
+    </select>
+    <button type="button" id="scanBtn">Tara</button>
+  </section>
+
+  <div class="chips" id="chips"></div>
+  <div id="msg" class="msg"></div>
+
+  <section class="card" id="scanCard" hidden>
+    <div class="row"><b id="scanTitle">Sonuçlar</b><span id="scanInfo" class="muted"></span></div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>#</th><th>Sembol</th><th>Ad</th><th>Fiyat</th><th>Gün %</th><th>Hafta %</th><th>Öneri</th><th>Skor</th><th>MA</th><th>Osilatör</th><th>RSI</th><th>ADX</th></tr></thead>
+      <tbody id="scanBody"></tbody>
+    </table>
+    </div>
+  </section>
+
+  <div id="out" hidden>
+    <section class="card top">
+      <div>
+        <div id="title" class="title"></div>
+        <div id="price" class="price"></div>
+      </div>
+      <div>
+        <div id="rec" class="rec"></div>
+        <div id="score" class="muted"></div>
+      </div>
+      <div class="levels">
+        <div>Stop (2×ATR)<b id="stop"></b></div>
+        <div>Hedef (3×ATR)<b id="target"></b></div>
+        <div>ATR(14)<b id="atr"></b></div>
+      </div>
+    </section>
+
+    <div class="gauge"><span>SAT</span><div class="bar"><div id="mark"></div></div><span>AL</span></div>
+
+    <section class="card"><div id="tvchart" class="tv"></div></section>
+
+    <section class="card">
+      <div class="scroll">
+      <table>
+        <thead><tr><th>İndikatör</th><th>Değer</th><th>Sinyal</th><th>Açıklama</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      </div>
+      <div class="muted" style="margin-top:8px">Tablodaki oylar basitleştirilmiş kurallarla hesaplanır; üstteki öneri TradingView'ın resmi skorudur ve küçük farklar olabilir.</div>
+    </section>
+
+    <section class="card">
+      <div class="row"><b>Yapay Zeka Yorumu</b><button id="aiBtn" type="button">Yorum Al</button></div>
+      <div id="aiText" class="ai muted">Yorum almak için düğmeye basın (ANTHROPIC_API_KEY gerekir).</div>
+    </section>
+  </div>
+
+  <p class="muted foot">TradeMind eğitim ve karar destek amaçlıdır; yatırım tavsiyesi değildir. Veriler TradingView tarayıcı servisinden alınır ve gecikmeli olabilir.</p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

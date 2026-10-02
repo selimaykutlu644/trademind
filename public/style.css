@@ -1,0 +1,39 @@
+﻿*{box-sizing:border-box}
+body{margin:0;background:#0f1419;color:#e6e6e6;font-family:Segoe UI,Arial,sans-serif}
+.wrap{max-width:1200px;margin:0 auto;padding:18px}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.logo{font-size:28px;font-weight:700;letter-spacing:.5px}
+.logo span{color:#4da3ff}
+form{display:flex;flex-wrap:wrap;gap:8px}
+input,select,button{background:#1a2129;color:#e6e6e6;border:1px solid #2a3440;border-radius:8px;padding:9px 12px;font-size:14px}
+input{width:220px}
+button{background:#2b7fff;border-color:#2b7fff;cursor:pointer;font-weight:600}
+button:hover{filter:brightness(1.1)}
+button:disabled{opacity:.5;cursor:wait}
+.scanbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.chip{background:#1a2129;border:1px solid #2a3440;border-radius:999px;padding:4px 12px;font-size:13px;cursor:pointer}
+.chip:hover{border-color:#4da3ff}
+.msg{min-height:22px;color:#ffb84d;margin-bottom:6px}
+.card{background:#1a2129;border-radius:10px;padding:16px;margin:12px 0}
+.top{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.title{font-size:20px;font-weight:600}
+.price{font-size:28px;margin-top:4px}
+.rec{font-size:34px;font-weight:800}
+.buy{color:#26d07c}.sell{color:#ff5c5c}.neu{color:#aaa}
+.muted{color:#8b98a5;font-size:13px}
+.levels{display:flex;gap:18px}
+.levels div{font-size:12px;color:#8b98a5}
+.levels b{display:block;font-size:17px;color:#e6e6e6;margin-top:2px}
+.gauge{display:flex;align-items:center;gap:10px;font-size:12px;color:#8b98a5}
+.bar{flex:1;height:10px;border-radius:6px;position:relative;background:linear-gradient(90deg,#ff5c5c,#555 50%,#26d07c)}
+#mark{position:absolute;top:-4px;width:4px;height:18px;background:#fff;border-radius:2px;transform:translateX(-2px);left:50%}
+.tv{height:560px}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+td,th{padding:7px 10px;border-bottom:1px solid #2a3440;text-align:left;font-size:14px;white-space:nowrap}
+th{color:#8b98a5;font-weight:600}
+tr.click{cursor:pointer}tr.click:hover{background:#222c36}
+.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.ai{white-space:pre-wrap;line-height:1.55;font-size:14px;color:#d5dbe1}
+.foot{text-align:center;margin:20px 0}@media(max-width:600px){.wrap{padding:10px}.tv{height:420px}.rec{font-size:26px}.price{font-size:22px}input,select{width:100%}form{width:100%}.levels{flex-wrap:wrap}}

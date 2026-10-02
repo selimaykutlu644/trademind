@@ -1,0 +1,8 @@
+{
+  "appId": "com.trademind.app",
+  "appName": "TradeMind",
+  "webDir": "build/web",
+  "server": {
+    "androidScheme": "https"
+  }
+}
