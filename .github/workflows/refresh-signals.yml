@@ -1,0 +1,24 @@
+name: Refresh TradeMind signals
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Refresh signals and send push notifications
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          VERCEL_BYPASS: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: |
+          set -euo pipefail
+          curl --fail-with-body --silent --show-error \
+            -H "Authorization: Bearer ${CRON_SECRET}" \
+            -H "x-vercel-protection-bypass: ${VERCEL_BYPASS}" \
+            "https://trademind-web-eight.vercel.app/api/signals?job=refresh"
